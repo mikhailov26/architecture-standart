@@ -1,0 +1,26 @@
+@startuml
+!include <C4/C4_Context>
+!include <C4/C4_Container>
+
+LAYOUT_TOP_DOWN()
+LAYOUT_WITH_LEGEND()
+
+title System Context Diagram — Rates → Contact Centre
+
+Person(backoffice, "Бэк-офис (XLS)", "Загружает ставки")
+
+System_Ext(partner_kc, "Партнёрский КЦ (внеш.)", "Внешний контакт-центр")
+
+System(rates, "Сервис ставок (Rates)", "Управление и публикация ставок")
+System(kc_internal, "Контакт-центр (внутр.)", "Внутренний контакт-центр")
+System(exporter, "Rates Exporter", "Экспорт ставок в CSV/JSON")
+System(mail_gateway, "Почтовый шлюз", "Отправка защищённых писем")
+
+Rel(backoffice, rates, "XLS загрузка/публикация", "HTTP")
+Rel(rates, kc_internal, "API/DB view текущих ставок", "REST/SQL")
+Rel(rates, exporter, "событие публикации", "Message")
+
+Rel(exporter, mail_gateway, "CSV/JSON", "HTTP/SFTP")
+Rel(mail_gateway, partner_kc, "защищённая почта (PGP/SMIME)", "SMTP")
+
+@enduml

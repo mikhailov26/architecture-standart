@@ -1,0 +1,43 @@
+@startuml
+!include <C4/C4_Component>
+!include <C4/C4_Container>
+
+LAYOUT_TOP_DOWN()
+LAYOUT_WITH_LEGEND()
+
+title Component Diagram — Rates / Contact Centre / Exporter
+
+Boundary(rates_system, "Rates") {
+    Container(rates_event, "rates.published", "Event", "шина событий")
+    Container(rates_api, "Rates API", "REST", "GET /rates, POST /publish")
+    Container(rates_db, "Rates DB", "MS SQL/Oracle", "версионирование, аудит")
+    Container(rates_import, "XLS Import/Validator", "Batch", "импорт и валидация")
+    Container(rates_view, "rates_view_current", "Materialized View", "актуальные ставки")
+
+    Rel(rates_api, rates_event, "emit published")
+    Rel(rates_api, rates_db, "read/write")
+    Rel(rates_import, rates_db, "валидные ставки")
+    Rel(rates_db, rates_view, "материализация")
+}
+
+Boundary(kc_system, "КЦ (internal)") {
+    Container(kc_adapter, "КЦ-адаптер", "DB view / REST client")
+    Container(kc_ui, "UI ставок в КЦ", "Web UI")
+
+    Rel(kc_ui, kc_adapter, "получить ставки")
+}
+
+Boundary(partner_system, "Партнёр") {
+    Container(partner_exporter, "Rates Exporter", "CSV/JSON")
+    Container(partner_keys, "PGP/SMIME Keys", "Key Storage")
+    Container(partner_mail, "Mail Gateway", "Email Gateway")
+    Container(partner_kc, "Партнёрский КЦ", "External System")
+
+    Rel(partner_exporter, partner_keys, "шифрование/подпись")
+    Rel(partner_exporter, partner_mail, "отправка")
+    Rel(partner_mail, partner_kc, "доставка")
+}
+
+Rel(kc_adapter, rates_view, "read-only", "DB link / REST")
+Rel(partner_exporter, rates_event, "subscribe", "message")
+@enduml

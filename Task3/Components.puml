@@ -1,0 +1,36 @@
+@startuml
+!include <C4/C4_Component>
+!include <C4/C4_Context>
+
+LAYOUT_TOP_DOWN()
+LAYOUT_WITH_LEGEND()
+
+title Rates System Context
+
+Container(rates_api, "Rates API", "REST API", "GET /rates, POST /publish")
+Container(rates_db, "Rates DB", "MS SQL/Oracle", "версионирование, аудит")
+Container(rates_event, "rates.published", "Event", "шина событий")
+Container(rates_import, "XLS Import/Validator", "Batch", "импорт и валидация")
+Container(rates_view, "rates_view_current", "Materialized View", "актуальные ставки")
+
+Container(kc_adapter, "КЦ-адаптер", "DB view / REST client")
+Container(kc_ui, "UI ставок в КЦ", "Web UI")
+
+Container(partner_exporter, "Rates Exporter", "CSV/JSON", "экспорт ставок")
+Container(partner_mail, "Mail Gateway", "Email Gateway", "отправка писем")
+Container(partner_kc, "Партнёрский КЦ", "External System")
+Container(partner_keys, "PGP/SMIME Keys", "Key Storage", "шифрование/подпись")
+
+Rel(rates_api, rates_event, "emit published")
+Rel(rates_api, rates_db, "read/write")
+Rel(rates_import, rates_db, "валидные ставки")
+Rel(rates_db, rates_view, "материализация")
+
+Rel(kc_adapter, rates_view, "read-only", "DB link / REST")
+Rel(kc_ui, kc_adapter, "получить ставки", "REST")
+
+Rel(partner_exporter, rates_event, "subscribe", "message")
+Rel(partner_exporter, partner_keys, "шифрование/подпись")
+Rel(partner_exporter, partner_mail, "отправка")
+Rel(partner_mail, partner_kc, "доставка")
+@enduml
