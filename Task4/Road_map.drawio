@@ -1,0 +1,91 @@
+<mxfile host="drawio-plugin" modified="2026-06-15T10:20:43.034Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" version="23.1.5" etag="bb37ZHTuIdCuUctTJDzg" type="embed">
+  <diagram id="HCxMyV6bj6VZHDQ-gUiS" name="Page-1">
+    <mxGraphModel dx="857" dy="719" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="3" value="Дорожная карта (6 месяцев MVP → Target 12м) — по системам" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#9e9e9e" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="900" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="M1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#9e9e9e" vertex="1" parent="1">
+          <mxGeometry x="40" y="90" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="M2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#9e9e9e" vertex="1" parent="1">
+          <mxGeometry x="240" y="90" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="M3" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#9e9e9e" vertex="1" parent="1">
+          <mxGeometry x="440" y="90" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="M4" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#9e9e9e" vertex="1" parent="1">
+          <mxGeometry x="640" y="90" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="M5" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#9e9e9e" vertex="1" parent="1">
+          <mxGeometry x="840" y="90" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="M6" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#9e9e9e" vertex="1" parent="1">
+          <mxGeometry x="1040" y="90" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="Сервис ставок (Rates)" style="swimlane;startSize=30;" vertex="1" parent="1">
+          <mxGeometry x="40" y="140" width="1220" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="18" value="Модель данных + импорт XLS" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656" vertex="1" parent="10">
+          <mxGeometry y="40" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="19" value="Публикация/версии + rates_view_current" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656" vertex="1" parent="10">
+          <mxGeometry x="200" y="40" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="20" value="Webhook rates.published + мониторинг" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656" vertex="1" parent="10">
+          <mxGeometry x="310" y="40" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="Система КЦ (внутр.)" style="swimlane;startSize=30;" vertex="1" parent="1">
+          <mxGeometry x="40" y="240" width="1220" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="21" value="Интеграция (DB-view/REST)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656" vertex="1" parent="11">
+          <mxGeometry x="190" y="40" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="22" value="Экран ставок + кэш" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656" vertex="1" parent="11">
+          <mxGeometry x="410" y="40" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="23" value="Нагрузочное тестирование" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656" vertex="1" parent="11">
+          <mxGeometry x="600" y="40" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="Exporter (рассылка файлов)" style="swimlane;startSize=30;" vertex="1" parent="1">
+          <mxGeometry x="40" y="340" width="1220" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="24" value="CSV/JSON генерация" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656" vertex="1" parent="12">
+          <mxGeometry y="40" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="26" value="Рассылка + ретраи + отчёты" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656" vertex="1" parent="12">
+          <mxGeometry x="200" y="40" width="380" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="25" value="PGP/SMIME + подпись" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656" vertex="1" parent="12">
+          <mxGeometry x="600" y="40" width="190" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="Почтовый шлюз" style="swimlane;startSize=30;" vertex="1" parent="1">
+          <mxGeometry x="40" y="440" width="1220" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="27" value="Учётка/лимиты" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656" vertex="1" parent="13">
+          <mxGeometry x="10" y="40" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="28" value="Мониторинг/алерты/runbooks" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656" vertex="1" parent="13">
+          <mxGeometry x="200" y="40" width="360" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="KMS/Ключи (PGP/SMIME)" style="swimlane;startSize=30;" vertex="1" parent="1">
+          <mxGeometry x="40" y="540" width="1220" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="29" value="Ключи партнёра + ротация" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656" vertex="1" parent="14">
+          <mxGeometry x="560" y="40" width="240" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="15" value="Партнёрский КЦ (внешний)" style="swimlane;startSize=30;" vertex="1" parent="1">
+          <mxGeometry x="40" y="640" width="1220" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="30" value="Тест-рассылки/приём файла" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656" vertex="1" parent="15">
+          <mxGeometry x="810" y="40" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="31" value="Пилот/обучение" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656" vertex="1" parent="15">
+          <mxGeometry x="1020" y="40" width="180" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

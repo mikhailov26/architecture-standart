@@ -1,0 +1,83 @@
+<mxfile host="drawio-plugin" modified="2026-06-15T09:57:02.455Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" etag="zE_doVSDimc0z6MOumny" version="23.1.5" type="embed">
+  <diagram id="0g3uwvKBV1TKWWIV8_N6" name="Page-1">
+    <mxGraphModel dx="857" dy="719" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="92" value="Клиент&#xa;(браузер / телефон)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#555555" vertex="1" parent="1">
+          <mxGeometry x="840" y="20" width="200" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="93" value="Сайт&#xa;(PHP + React)&#xa;(маркетинг, без онлайн‑продаж сегодня)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f5e9;strokeColor=#66bb6a" vertex="1" parent="1">
+          <mxGeometry x="60" y="230" width="240" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="94" value="Интернет‑банк&#xa;(ASP.NET MVC 4.5 + MS SQL)&#xa;(платежи, текущие счета)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f5e9;strokeColor=#66bb6a" vertex="1" parent="1">
+          <mxGeometry x="360" y="230" width="300" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="95" value="Система кол‑центра банка&#xa;(React + Spring Boot + PostgreSQL)&#xa;— хостится у банка, поддержка подрядчика" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f5e9;strokeColor=#66bb6a" vertex="1" parent="1">
+          <mxGeometry x="700" y="230" width="360" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="96" value="Партнёрский кол‑центр&#xa;(внешняя система)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffeeee;strokeColor=#cc0000" vertex="1" parent="1">
+          <mxGeometry x="1460" y="240" width="240" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="97" value="АБС&#xa;(Delphi‑клиент, Oracle/PL‑SQL)&#xa;— основная учётная система" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f5e9;strokeColor=#66bb6a" vertex="1" parent="1">
+          <mxGeometry x="560" y="440" width="320" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="98" value="Клиент АБС (Delphi)&#xa;(участники: фронт‑офис, БО депозиты, БО кредиты)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#555555" vertex="1" parent="1">
+          <mxGeometry x="560" y="580" width="320" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="99" value="СМС‑шлюз банка" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f5e9;strokeColor=#66bb6a" vertex="1" parent="1">
+          <mxGeometry x="980" y="440" width="180" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="100" value="Телеком‑оператор&#xa;(внешний)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffeeee;strokeColor=#cc0000" vertex="1" parent="1">
+          <mxGeometry x="1190" y="440" width="180" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="101" value="Excel/Email&#xa;(ручные расчёты ставок)&#xa;участники: БО депозиты, БО кредиты" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff3e0;strokeColor=#fb8c00" vertex="1" parent="1">
+          <mxGeometry x="240" y="440" width="260" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="102" value="просмотр информации" edge="1" parent="1" source="92" target="93">
+          <mxGeometry as="geometry" />
+        </mxCell>
+        <mxCell id="103" value="звонок" edge="1" parent="1" source="92" target="95">
+          <mxGeometry as="geometry" />
+        </mxCell>
+        <mxCell id="104" value="вход в ИБ" edge="1" parent="1" source="92" target="94">
+          <mxGeometry as="geometry" />
+        </mxCell>
+        <mxCell id="105" value="обращения из КЦ → предрасчёт ставок для клиента" edge="1" parent="1" source="95" target="97">
+          <mxGeometry as="geometry" />
+        </mxCell>
+        <mxCell id="106" value="обмен заявками/результатами (API/файлы)" style="dashed=1;strokeColor=#cc0000" edge="1" parent="1" source="96" target="95">
+          <mxGeometry as="geometry">
+            <mxPoint x="50" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="107" value="прямой доступ к БД (исторически, рискованно)" style="strokeColor=#fb8c00;endArrow=block;endFill=1;" edge="1" parent="1" source="94" target="97">
+          <mxGeometry as="geometry" />
+        </mxCell>
+        <mxCell id="108" value="уведомления" edge="1" parent="1" source="97" target="99">
+          <mxGeometry as="geometry" />
+        </mxCell>
+        <mxCell id="109" value="" edge="1" parent="1" source="99" target="100">
+          <mxGeometry as="geometry" />
+        </mxCell>
+        <mxCell id="110" value="SMS" edge="1" parent="1" source="100" target="92">
+          <mxGeometry as="geometry">
+            <mxPoint x="-11" y="-35" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="111" value="рабочие места" edge="1" parent="1" source="98" target="97">
+          <mxGeometry as="geometry" />
+        </mxCell>
+        <mxCell id="112" value="данные риска (кредиты) → расчёт специальных ставок" edge="1" parent="1" source="98" target="101">
+          <mxGeometry as="geometry" />
+        </mxCell>
+        <mxCell id="113" value="ставки → сотруднику депозита/фронт‑офиса" edge="1" parent="1" source="101" target="98">
+          <mxGeometry as="geometry" />
+        </mxCell>
+        <mxCell id="114" value="Легенда:&#xa;зелёный — ИС банка&#xa;красный — внешние системы&#xa;оранжевый — ручные/устаревшие решения&#xa;пунктир — предполагаемая/файловая интеграция&#xa;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#888888" vertex="1" parent="1">
+          <mxGeometry x="60" y="20" width="520" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
